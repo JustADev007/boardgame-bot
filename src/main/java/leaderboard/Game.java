@@ -16,6 +16,9 @@ public class Game {
     public String getName(){
         return this.name;
     }
+    public String getWeight(){
+        return this.weight;
+    }
 
     public String toString() {
         return this.name;

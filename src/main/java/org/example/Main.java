@@ -22,8 +22,8 @@ public class Main {
         Guild guild = bot.getGuildById("1251653017443237909");
 
         if(guild != null){
-            guild.upsertCommand("hello","Say hello").queue();
-            guild.upsertCommand("add-game", "add new board game to the list")
+            guild.upsertCommand("hello","Says hello").queue();
+            guild.upsertCommand("add-game", "adds new board game to the list")
                     .addOptions(
                             new OptionData(OptionType.STRING, "name", "enter name of game", true),
                             new OptionData(OptionType.STRING, "weight", "enter the difficulty", true),
@@ -31,6 +31,7 @@ public class Main {
                             new OptionData(OptionType.INTEGER, "max-players", "maximum amount of players", true)
                     )
                     .queue();
+            guild.upsertCommand("games","list all of the board games").queue();
         }
 
 

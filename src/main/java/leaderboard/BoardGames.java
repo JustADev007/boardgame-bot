@@ -19,6 +19,15 @@ public class BoardGames {
     public ArrayList<Game> getList(){
         return this.games;
     }
+    public boolean contains(String name){
+        for(Game game: games){
+            if(game.getName().equals(name)){
+                return false;
+            }
+        }
+        return true;
+
+    }
 
     public String toString(){
         String str = "";
@@ -26,6 +35,7 @@ public class BoardGames {
         if(games.size()>1){
             for(Game game: games){
                 str += index + ": " + game + "\n";
+                index ++;
             }
         }
         return str;
