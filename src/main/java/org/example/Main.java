@@ -5,6 +5,8 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class Main {
@@ -21,6 +23,14 @@ public class Main {
 
         if(guild != null){
             guild.upsertCommand("hello","Say hello").queue();
+            guild.upsertCommand("add-game", "add new board game to the list")
+                    .addOptions(
+                            new OptionData(OptionType.STRING, "name", "enter name of game", true),
+                            new OptionData(OptionType.STRING, "weight", "enter the difficulty", true),
+                            new OptionData(OptionType.INTEGER, "min-players", "enter minimum amount of players", true),
+                            new OptionData(OptionType.INTEGER, "max-players", "maximum amount of players", true)
+                    )
+                    .queue();
         }
 
 

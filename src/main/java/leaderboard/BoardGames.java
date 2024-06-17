@@ -16,6 +16,10 @@ public class BoardGames {
         games.add(game);
     }
 
+    public ArrayList<Game> getList(){
+        return this.games;
+    }
+
     public String toString(){
         String str = "";
         int index = 1;
