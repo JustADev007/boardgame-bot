@@ -51,9 +51,11 @@
       <method v="2" />
     </configuration>
     <configuration name="org.example.Main" type="Application" factoryName="Application">
+      <envs>
+        <env name="BOT_KEY" value="MTI1MjM2OTU2OTM2NTEwMjY1NA.G6CjnG.XlXgkT-5iAZ5sXXfPd-n6jq4mL2nUw1iC-GEu0" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="boardgame-bot" />
-      <option name="PROGRAM_PARAMETERS" value="Justin" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
