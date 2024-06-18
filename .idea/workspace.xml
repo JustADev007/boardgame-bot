@@ -55,6 +55,11 @@
       <module name="boardgame-bot" />
       <method v="2" />
     </configuration>
+    <configuration name="commands.Test" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="commands.Test" />
+      <module name="boardgame-bot" />
+      <method v="2" />
+    </configuration>
     <configuration name="leaderboard.Game" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="leaderboard.Game" />
       <module name="boardgame-bot" />

@@ -19,6 +19,22 @@ public class Game {
     public String getWeight(){
         return this.weight;
     }
+    public boolean equals(Object game){
+
+        if(this == game){
+            return true;
+        }
+
+        if(!(game instanceof Game) ){
+            return false;
+        }
+
+        Game comparedGame = (Game) game;
+
+        return this.name.equals(comparedGame.name);
+
+
+    }
 
     public String toString() {
         return this.name;

@@ -6,10 +6,14 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class BotCommands extends ListenerAdapter {
-    private BoardGames boardGames;
+    private final BoardGames boardGames;
 
     public BotCommands() {
         this.boardGames = new BoardGames();
+        boardGames.addGame(new Game("Gloomhaven", "heavy", 1,4));
+        boardGames.addGame(new Game("Too Many Bones", "heavy", 1,4));
+        boardGames.addGame(new Game("Mage Knight", "heavy", 1,4));
+        boardGames.addGame(new Game("Azul", "light", 2,4));
 
     }
 
@@ -28,21 +32,28 @@ public class BotCommands extends ListenerAdapter {
             System.out.println(game.getWeight());
             System.out.println(boardGames);
 
-            if (boardGames.contains(name)) {
-
+            if (boardGames.contains(game)) {
                 event.reply("Game is already in list!").queue();
                 return;
             }
-//
-//            boardGames.addGame(game);
+
+
+
+            boardGames.addGame(game);
+
+            System.out.println(boardGames);
 
             event.reply("Added " + name + " to the list!").queue();
 
         } else if (event.getName().equals("games")) {
+
+            event.deferReply().queue();
+
             String gameList = boardGames.toString();
             System.out.println(gameList);
 
-            event.reply(gameList).queue();
+
+            event.getHook().sendMessage(gameList).queue();
         }
     }
 }
