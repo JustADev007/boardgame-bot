@@ -16,9 +16,15 @@ public class Game {
     public String getName(){
         return this.name;
     }
+
     public String getWeight(){
         return this.weight;
     }
+
+    public boolean validPlayerCount(int numOfPlayers){
+        return numOfPlayers >= minPlayers && numOfPlayers <= maxPlayers;
+    }
+
     public boolean equals(Object game){
 
         if(this == game){

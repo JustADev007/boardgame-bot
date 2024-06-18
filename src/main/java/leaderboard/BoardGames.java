@@ -26,6 +26,22 @@ public class BoardGames {
 
     }
 
+    public String getSuggestedGames(String weight, int playerCount){
+        String str = "";
+        int index = 1;
+        for(Game game: games){
+            if(game.getWeight().equals(weight) && game.validPlayerCount(playerCount)){
+
+                    str += index + ": " + game + "\n";
+                    index++;
+            }
+        }
+        if(str.isEmpty()){
+            return "No games meet this criteria";
+        }
+        return str;
+    }
+
     public String getRandom(){
         Random random = new Random();
         int intRandom = random.nextInt(games.size()-1);
