@@ -34,14 +34,17 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editing.templates"
   }
-}</component>
-  <component name="RunManager" selected="Application.org.example.Main">
+}]]></component>
+  <component name="RunManager" selected="Application.commands.Test">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -67,7 +70,7 @@
     </configuration>
     <configuration name="org.example.Main" type="Application" factoryName="Application">
       <envs>
-        <env name="BOT_KEY" value="MTI1MjM2OTU2OTM2NTEwMjY1NA.G6CjnG.XlXgkT-5iAZ5sXXfPd-n6jq4mL2nUw1iC-GEu0" />
+        <env name="BOT_KEY" value="" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="boardgame-bot" />

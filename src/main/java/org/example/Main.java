@@ -32,6 +32,7 @@ public class Main {
                     )
                     .queue();
             guild.upsertCommand("games","list all of the board games").queue();
+            guild.upsertCommand("random","picks a random board game").queue();
         }
 
 

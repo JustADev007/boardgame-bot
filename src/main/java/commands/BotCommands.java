@@ -45,15 +45,24 @@ public class BotCommands extends ListenerAdapter {
 
             event.reply("Added " + name + " to the list!").queue();
 
-        } else if (event.getName().equals("games")) {
+        }
+            else if (event.getName().equals("games")) {
 
             event.deferReply().queue();
 
             String gameList = boardGames.toString();
             System.out.println(gameList);
 
-
             event.getHook().sendMessage(gameList).queue();
+
+        }
+            else if (event.getName().equals("random")) {
+            event.deferReply().queue();
+
+            String randomGame = boardGames.getRandom();
+
+            event.getHook().sendMessage("The game i picked is " + randomGame).queue();
+
         }
     }
 }

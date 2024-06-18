@@ -1,6 +1,7 @@
 package leaderboard;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class BoardGames {
     public ArrayList<Game> games;
@@ -19,11 +20,17 @@ public class BoardGames {
     public ArrayList<Game> getList(){
         return this.games;
     }
+
     public boolean contains(Game game){
         return this.games.contains(game);
 
     }
 
+    public String getRandom(){
+        Random random = new Random();
+        int intRandom = random.nextInt(games.size()-1);
+        return games.get(intRandom).getName();
+    }
 
     public String toString(){
         String str = "";
