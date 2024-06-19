@@ -19,6 +19,16 @@ public class BotCommands extends ListenerAdapter {
         boardGames.addGame(new Game("Mage Knight", "heavy", 1,4));
         boardGames.addGame(new Game("Azul", "light", 2,4));
 
+        playerList.addPlayer("Justin");
+        playerList.addPlayer("Tre");
+        playerList.addPlayer("Kevin");
+
+        playerList.addWin("Justin", "Azul");
+        playerList.addWin("Justin", "Azul");
+        playerList.addWin("Justin", "Azul");
+        playerList.addWin("Kevin" , "Deception");
+
+
     }
 
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
@@ -92,11 +102,33 @@ public class BotCommands extends ListenerAdapter {
                 event.getHook().sendMessage(name + " has already been added").queue();
                 return;
             }
-
-
                  playerList.addPlayer(name);
 
             event.getHook().sendMessage("Added " + name + " to the list").queue();
+        }
+        else if(event.getName().equals("leaderboard")) {
+
+            event.deferReply().queue();
+
+            if(event.getOption("game-name") == null){
+                event.getHook().sendMessage(playerList.getLeaderboard()).queue();
+                return;
+            }
+
+            String gameName = event.getOption("game-name").getAsString();
+
+            event.getHook().sendMessage(playerList.getWinsByGame(gameName)).queue();
+        }
+        else if(event.getName().equals("add-win")) {
+
+            event.deferReply().queue();
+
+            String playerName = event.getOption("player-name").getAsString();
+            String gameName = event.getOption("game-name").getAsString();
+
+            playerList.addWin(playerName,gameName);
+
+            event.getHook().sendMessage("Congrats " + playerName + "!" ).queue();
         }
     }
 }

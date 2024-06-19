@@ -44,6 +44,17 @@ public class Main {
                             new OptionData(OptionType.STRING, "name", "enter name of player", true)
                     )
                     .queue();
+            guild.upsertCommand("leaderboard", "shows leaderboard for all games or a given game")
+                    .addOptions(
+                            new OptionData(OptionType.STRING, "game-name", "enter name of player", false)
+                    )
+                    .queue();
+            guild.upsertCommand("add-win","gives a player a win for played game")
+                    .addOptions(
+                            new OptionData(OptionType.STRING, "player-name", "enter the winners name",true),
+                            new OptionData(OptionType.STRING, "game-name", "enter the game won", true)
+                    )
+                    .queue();
         }
 
 
