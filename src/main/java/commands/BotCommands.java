@@ -2,14 +2,18 @@ package commands;
 
 import leaderboard.BoardGames;
 import leaderboard.Game;
+import leaderboard.Player;
+import leaderboard.PlayerList;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class BotCommands extends ListenerAdapter {
     private final BoardGames boardGames;
+    private final PlayerList playerList;
 
     public BotCommands() {
         this.boardGames = new BoardGames();
+        this.playerList = new PlayerList();
         boardGames.addGame(new Game("Gloomhaven", "heavy", 1,4));
         boardGames.addGame(new Game("Too Many Bones", "heavy", 1,4));
         boardGames.addGame(new Game("Mage Knight", "heavy", 1,4));
@@ -75,6 +79,24 @@ public class BotCommands extends ListenerAdapter {
             String suggestedGames = boardGames.getSuggestedGames(weight,minPlayers);
 
             event.getHook().sendMessage(suggestedGames).queue();
+        }
+            else if(event.getName().equals("add-player")) {
+
+            event.deferReply().queue();
+
+            String name = event.getOption("name").getAsString();
+
+            Player player = new Player(name);
+
+            if(playerList.contains(player)){
+                event.getHook().sendMessage(name + " has already been added").queue();
+                return;
+            }
+
+
+                 playerList.addPlayer(name);
+
+            event.getHook().sendMessage("Added " + name + " to the list").queue();
         }
     }
 }

@@ -27,12 +27,12 @@ public class BoardGames {
     }
 
     public String getSuggestedGames(String weight, int playerCount){
-        String str = "";
+        String str = "Based on your criteria I suggest these games:  ";
         int index = 1;
         for(Game game: games){
             if(game.getWeight().equals(weight) && game.validPlayerCount(playerCount)){
 
-                    str += index + ": " + game + "\n";
+                    str +=  "\n" + index + ": " + game;
                     index++;
             }
         }

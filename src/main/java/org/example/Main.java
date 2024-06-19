@@ -39,6 +39,11 @@ public class Main {
                             new OptionData(OptionType.INTEGER, "player-count", "enter your player count", true)
                     )
                     .queue();
+            guild.upsertCommand("add-player", "adds new player to the list")
+                    .addOptions(
+                            new OptionData(OptionType.STRING, "name", "enter name of player", true)
+                    )
+                    .queue();
         }
 
 
