@@ -4,6 +4,7 @@ import leaderboard.BoardGames;
 import leaderboard.Game;
 import leaderboard.Player;
 import leaderboard.PlayerList;
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -42,12 +43,19 @@ public class BotCommands extends ListenerAdapter {
             int maxPlayers = event.getOption("max-players").getAsInt();
 
             Game game = new Game(name, weight, minPlayers, maxPlayers);
-            System.out.println(game);
-            System.out.println(game.getWeight());
-            System.out.println(boardGames);
+
+            event.deferReply().queue();
 
             if (boardGames.contains(game)) {
-                event.reply("Game is already in list!").queue();
+                EmbedBuilder response = new EmbedBuilder();
+                response.setTitle("🛑 Nope");
+                response.setDescription("Cannot add: " + name + " has already been added");
+                response.setColor(0xF50B0B);
+                response.setFooter(event.getMember().getUser().getName() + " you should have known better!",event.getMember().getUser().getAvatarUrl());
+
+
+                event.getHook().sendMessageEmbeds(response.build()).queue();
+                response.clear();
                 return;
             }
 
@@ -57,8 +65,15 @@ public class BotCommands extends ListenerAdapter {
 
             System.out.println(boardGames);
 
-            event.reply("Added " + name + " to the list!").queue();
+            EmbedBuilder response = new EmbedBuilder();
+            response.setTitle("✅ Success");
+            response.setDescription("Added " + name + " to the list!");
+            response.setColor(0x28ED73);
+            response.setFooter("Added by " + event.getMember().getUser().getName(),event.getMember().getUser().getAvatarUrl());
 
+
+            event.getHook().sendMessageEmbeds(response.build()).queue();
+            response.clear();
         }
             else if (event.getName().equals("games")) {
 

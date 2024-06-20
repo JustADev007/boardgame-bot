@@ -39,7 +39,7 @@ public class PlayerList {
     public String getLeaderboard(){
         String leaderboard = "";
         for(Player player: players){
-            leaderboard += player.getPlayerName() + ": " + player.getTotalWins() + " wins! \n";
+            leaderboard += player.getPlayerName() + ":      " + player.getTotalWins() + " wins! \n";
         }
         return leaderboard;
     }

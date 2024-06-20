@@ -36,7 +36,7 @@ public class Player {
        if(gameWin == 0){
            return "";
        }
-       return playerName + ": " + gameWin + " wins!";
+       return playerName + ":       " + gameWin + " wins!";
    }
 
     public boolean equals(Object player){

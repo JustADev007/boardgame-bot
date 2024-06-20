@@ -12,6 +12,8 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/commands/BotCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/BotCommands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/commands/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/leaderboard/BoardGames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leaderboard/BoardGames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leaderboard/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leaderboard/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leaderboard/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leaderboard/PlayerList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
